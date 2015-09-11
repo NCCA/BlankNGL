@@ -3,7 +3,7 @@
 
 #include "NGLScene.h"
 #include <ngl/NGLInit.h>
-
+#include <iostream>
 
 NGLScene::NGLScene(QWindow *_parent) : OpenGLWindow(_parent)
 {
