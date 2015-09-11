@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.11)
 # Name of the project
-project(BlankNGL)
+set(PROJECT_NAME BlankNGL)
+project(${PROJECT_NAME})
 #Bring the headers into the project (local ones)
 include_directories(include $ENV{HOME}/NGL/include)
 
@@ -12,6 +13,9 @@ set(SOURCES ${PROJECT_SOURCE_DIR}/src/main.cpp
 			${PROJECT_SOURCE_DIR}/include/OpenGLWindow.h
 
 )
+# define this if you want to include the stanford data sets
+# these are very big and make compilation time huge
+add_definitions(-DADDLARGEMODELS)
 
 # see what platform we are on and set platform defines
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -48,6 +52,6 @@ find_package(Qt5Core)
 
 
 # add exe and link libs this must be after the other defines
-add_executable(BlankNGL ${SOURCES})
-target_link_libraries(BlankNGL ${PROJECT_LINK_LIBS} Qt5::OpenGL Qt5::Core Qt5::Gui Qt5::Widgets )
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LINK_LIBS} Qt5::OpenGL Qt5::Core Qt5::Gui Qt5::Widgets )
 
