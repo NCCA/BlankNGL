@@ -45,7 +45,11 @@ private:
     //----------------------------------------------------------------------------------------------------------------------
     /// @brief this is called everytime we resize the window
     //----------------------------------------------------------------------------------------------------------------------
+    // Qt 5.5.1 must have this implemented and uses it
     void resizeGL(QResizeEvent *_event);
+    // Qt 5.x uses this instead! http://doc.qt.io/qt-5/qopenglwindow.html#resizeGL
+    void resizeGL(int _w, int _h);
+
     //----------------------------------------------------------------------------------------------------------------------
     /// @brief Qt Event called when a key is pressed
     /// @param [in] _event the Qt event to query for size etc
