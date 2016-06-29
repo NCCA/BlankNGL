@@ -19,14 +19,14 @@ NGLScene::~NGLScene()
 
 void NGLScene::resizeGL(QResizeEvent *_event)
 {
-  m_width=_event->size().width()*devicePixelRatio();
-  m_height=_event->size().height()*devicePixelRatio();
+  m_win.width=_event->size().width()*devicePixelRatio();
+  m_win.height=_event->size().height()*devicePixelRatio();
 }
 
 void NGLScene::resizeGL(int _w , int _h)
 {
-  m_width=_w*devicePixelRatio();
-  m_height=_h*devicePixelRatio();
+  m_win.width=_w*devicePixelRatio();
+  m_win.height=_h*devicePixelRatio();
 }
 
 
@@ -50,7 +50,7 @@ void NGLScene::paintGL()
 {
   // clear the screen and depth buffer
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glViewport(0,0,m_width,m_height);
+  glViewport(0,0,m_win.width,m_win.height);
 
 }
 
