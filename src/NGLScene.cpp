@@ -17,16 +17,12 @@ NGLScene::~NGLScene()
   std::cout<<"Shutting down NGL, removing VAO's and Shaders\n";
 }
 
-void NGLScene::resizeGL(QResizeEvent *_event)
-{
-  m_win.width=_event->size().width()*devicePixelRatio();
-  m_win.height=_event->size().height()*devicePixelRatio();
-}
+
 
 void NGLScene::resizeGL(int _w , int _h)
 {
-  m_win.width=_w*devicePixelRatio();
-  m_win.height=_h*devicePixelRatio();
+  m_win.width  = static_cast<int>( _w * devicePixelRatio() );
+  m_win.height = static_cast<int>( _h * devicePixelRatio() );
 }
 
 
