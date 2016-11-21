@@ -17,7 +17,8 @@ MOC_DIR=moc
 CONFIG-=app_bundle
 # Auto include all .cpp files in the project src directory (can specifiy individually if required)
 SOURCES+= $$PWD/src/main.cpp \
-					$$PWD/src/NGLScene.cpp
+          $$PWD/src/NGLScene.cpp \
+          $$PWD/src/NGLSceneMouseControls.cpp
 # same for the .h files
 HEADERS+= $$PWD/include/NGLScene.h \
           $$PWD/include/WindowParams.h

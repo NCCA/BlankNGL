@@ -1,10 +1,6 @@
-#ifndef NGLSCENE_H__
-#define NGLSCENE_H__
-#include <ngl/Camera.h>
-#include <ngl/Colour.h>
-#include <ngl/Light.h>
-#include <ngl/Transformation.h>
-#include <ngl/Text.h>
+#ifndef NGLSCENE_H_
+#define NGLSCENE_H_
+#include <ngl/Vec3.h>
 #include <QOpenGLWindow>
 #include "WindowParams.h"
 //----------------------------------------------------------------------------------------------------------------------
@@ -79,6 +75,8 @@ private:
     void wheelEvent( QWheelEvent *_event);
     /// @brief windows parameters for mouse control etc.
     WinParams m_win;
+    /// position for our model
+    ngl::Vec3 m_modelPos;
 
 };
 
