@@ -63,6 +63,7 @@ void NGLScene::keyPressEvent(QKeyEvent *_event)
   case Qt::Key_Space :
       m_win.spinXFace=0;
       m_win.spinYFace=0;
+      m_modelPos.set(ngl::Vec3::zero());
 
   break;
   default : break;

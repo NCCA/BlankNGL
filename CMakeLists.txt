@@ -8,6 +8,7 @@ include_directories(include $ENV{HOME}/NGL/include)
 #the file(GLOB...) allows for wildcard additions of our src dir
 set(SOURCES ${PROJECT_SOURCE_DIR}/src/main.cpp  
 			${PROJECT_SOURCE_DIR}/src/NGLScene.cpp  
+			${PROJECT_SOURCE_DIR}/src/NGLSceneMouseControls.cpp  
 			${PROJECT_SOURCE_DIR}/include/NGLScene.h  
 )
 # use C++ 11
