@@ -1,6 +1,7 @@
 #ifndef NGLSCENE_H_
 #define NGLSCENE_H_
-#include <ngl/Vec3.h>
+#include <ngl/Vec3.h>m_win.spinXFace=0;
+
 #include <QOpenGLWindow>
 #include "WindowParams.h"
 //----------------------------------------------------------------------------------------------------------------------
