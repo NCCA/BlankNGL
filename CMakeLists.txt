@@ -20,6 +20,7 @@ target_sources(${TargetName} PRIVATE ${PROJECT_SOURCE_DIR}/src/main.cpp
 			${PROJECT_SOURCE_DIR}/src/NGLSceneMouseControls.cpp  
 			${PROJECT_SOURCE_DIR}/include/NGLScene.h  
 )
+add_compile_definitions(ADDLARGEMODELS)
 
 # see what platform we are on and set platform defines
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
