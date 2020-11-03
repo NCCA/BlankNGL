@@ -28,10 +28,9 @@ void NGLScene::resizeGL(int _w , int _h)
 
 void NGLScene::initializeGL()
 {
-  // we need to initialise the NGL lib which will load all of the OpenGL functions, this must
-  // be done once we have a valid GL context but before we call any GL commands. If we dont do
-  // this everything will crash
-  ngl::NGLInit::instance();
+  // we must call that first before any other GL commands to load and link the
+  // gl commands from the lib, if that is not done program will crash
+  ngl::NGLInit::initalize();
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);			   // Grey Background
   // enable depth testing for drawing
   glEnable(GL_DEPTH_TEST);
