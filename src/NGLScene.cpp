@@ -30,7 +30,7 @@ void NGLScene::initializeGL()
 {
   // we must call that first before any other GL commands to load and link the
   // gl commands from the lib, if that is not done program will crash
-  ngl::NGLInit::initalize();
+  ngl::NGLInit::initialize();
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);			   // Grey Background
   // enable depth testing for drawing
   glEnable(GL_DEPTH_TEST);
