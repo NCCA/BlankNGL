@@ -38,12 +38,8 @@ target_sources(${TargetName} PRIVATE ${PROJECT_SOURCE_DIR}/src/main.cpp
 			${PROJECT_SOURCE_DIR}/include/NGLScene.h  
 )
 
-<<<<<<< HEAD
-target_link_libraries(${TargetName} PRIVATE  NGL  Qt5::Widgets)
-=======
 target_link_libraries(${TargetName} PRIVATE Qt5::Widgets NGL)
 
->>>>>>> 8516b2df944d099b6fe91d4eaa3de31d8a5d7bff
 #add_custom_target(${TargetName}CopyShaders ALL
 #    COMMAND ${CMAKE_COMMAND} -E copy_directory
 #    ${CMAKE_CURRENT_SOURCE_DIR}/shaders
