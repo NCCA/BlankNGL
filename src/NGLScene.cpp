@@ -3,6 +3,7 @@
 
 #include "NGLScene.h"
 #include <ngl/NGLInit.h>
+#include <ngl/VAOPrimitives.h>
 #include <iostream>
 
 NGLScene::NGLScene()
@@ -31,7 +32,7 @@ void NGLScene::initializeGL()
   // we must call that first before any other GL commands to load and link the
   // gl commands from the lib, if that is not done program will crash
   ngl::NGLInit::initialize();
-  glClearColor(1.0f, 1.0f, 1.0f, 1.0f);			   // Grey Background
+  glClearColor(0.7f, 0.7f, 0.7f, 1.0f);			   // Grey Background
   // enable depth testing for drawing
   glEnable(GL_DEPTH_TEST);
   // enable multisampling for smoother drawing
@@ -46,6 +47,7 @@ void NGLScene::paintGL()
   // clear the screen and depth buffer
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glViewport(0,0,m_win.width,m_win.height);
+  ngl::VAOPrimitives::draw("teapot");
 
 }
 
