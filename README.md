@@ -11,7 +11,7 @@ Windows
 ```
 mkdir build
 cd build
-cmake --build -DCMAKE_PREFIX_PATH=~/NGL ..
+cmake -DCMAKE_PREFIX_PATH=~/NGL ..
 cmake --build .
 
 ```
