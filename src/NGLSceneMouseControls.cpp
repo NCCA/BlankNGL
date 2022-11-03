@@ -4,10 +4,14 @@
 //----------------------------------------------------------------------------------------------------------------------
 void NGLScene::mouseMoveEvent(QMouseEvent *_event)
 {
-  // note the method buttons() is the button state when event was called
-  // that is different from button() which is used to check which button was
-  // pressed when the mousePress/Release event is generated
+// note the method buttons() is the button state when event was called
+// that is different from button() which is used to check which button was
+// pressed when the mousePress/Release event is generated
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
   auto position = _event->position();
+#else
+  auto position = _event->pos();
+#endif
   if (m_win.rotate && _event->buttons() == Qt::LeftButton)
   {
     int diffx = position.x() - m_win.origX;
@@ -35,8 +39,12 @@ void NGLScene::mouseMoveEvent(QMouseEvent *_event)
 void NGLScene::mousePressEvent(QMouseEvent *_event)
 {
   // that method is called when the mouse button is pressed in this case we
-  // store the value where the maouse was clicked (x,y) and set the Rotate flag to true
+  // store the value where the mouse was clicked (x,y) and set the Rotate flag to true
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
   auto position = _event->position();
+#else
+  auto position = _event->pos();
+#endif
 
   if (_event->button() == Qt::LeftButton)
   {
