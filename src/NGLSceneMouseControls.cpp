@@ -1,6 +1,6 @@
 #include "NGLScene.h"
 #include <QMouseEvent>
-
+#include <QtGlobal>
 //----------------------------------------------------------------------------------------------------------------------
 void NGLScene::mouseMoveEvent(QMouseEvent *_event)
 {
@@ -25,8 +25,8 @@ void NGLScene::mouseMoveEvent(QMouseEvent *_event)
   // right mouse translate code
   else if (m_win.translate && _event->buttons() == Qt::RightButton)
   {
-    int diffX = static_cast<int>(_event->position().x() - m_win.origXPos);
-    int diffY = static_cast<int>(_event->position().y() - m_win.origYPos);
+    int diffX = static_cast<int>(position.x() - m_win.origXPos);
+    int diffY = static_cast<int>(position.y() - m_win.origYPos);
     m_win.origXPos = position.x();
     m_win.origYPos = position.y();
     m_modelPos.m_x += INCREMENT * diffX;
